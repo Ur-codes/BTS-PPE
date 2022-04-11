@@ -1,0 +1,29 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+   <persistence-unit name="annuaire" transaction-type="RESOURCE_LOCAL">
+   
+      <class>modele.Salarie</class>
+      <class>modele.Employe</class>
+      <class>modele.Poste</class>
+      
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> 
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ppedb:5432/annuaireDB" />
+            <property name="javax.persistence.jdbc.user" value="ppe" /> 
+            <property name="javax.persistence.jdbc.password" value="ppe" /> 
+		    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> 
+		    
+	   <!-- <property name="hibernate.max_fetch_depth" value="3"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+         
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
